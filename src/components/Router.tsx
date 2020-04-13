@@ -47,7 +47,7 @@ const MainNavigation = () => (
           title: 'Scan Devices',
         }}
       />
-      <Stack.Screen name="HeartRate" component={Questions} />
+      <Stack.Screen name="Questions" component={Questions} />
     </Stack.Navigator>
   </NavigationContainer>
 );
