@@ -12,7 +12,7 @@ const Home = ({navigation}) => {
         />
         <Button
           title="go to quiz"
-          onPress={() => navigation.navigate('Questions')}
+          onPress={() => navigation.navigate('Category')}
         />
       </View>
     </View>
