@@ -1,3 +1,3 @@
-import Questions from './Questions';
+import Results from './Results';
 
-export {Questions};
+export default Results;

@@ -10,8 +10,8 @@ API.getCategories = () => {
 API.getQuestion = (category, index) => {
   let quiz = null;
   switch (category) {
-    case 'Science':
-      quiz = data.Science[index];
+    case 'Biology':
+      quiz = data.Biology[index];
       break;
     case 'English':
       quiz = data.English[index];

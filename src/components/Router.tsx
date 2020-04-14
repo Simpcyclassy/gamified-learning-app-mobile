@@ -2,13 +2,11 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import Category from './category/components/Category';
-// import QuizPageScreen from './components/screens/QuizPageScreen';
-// import ViewResultScreen from './components/screens/ViewResultScreen';
-// import SettingsScreen from './components/screens/SettingsScreen';
 
-import {Home} from './home/components';
-// import {Questions} from './questions/components';
+import Home from './home/components';
+import Category from './category/components';
+// import Results from './results/components';
+import Questions from './questions/components';
 
 const Stack = createStackNavigator();
 
@@ -36,9 +34,8 @@ const Router = () => (
           title: 'Primary Quiz',
         }}
       />
-      {/* <Stack.Screen name="QuizPageScreen" component={QuizPageScreen} /> */}
-      {/* <Stack.Screen name="ViewResultScreen" component={ViewResultScreen} /> */}
-      {/* <Stack.Screen name="SettingsScreen" component={SettingsScreen} /> */}
+      <Stack.Screen name="QuizPage" component={Questions} />
+      {/* <Stack.Screen name="ViewResult" component={Results} /> */}
     </Stack.Navigator>
   </NavigationContainer>
 );
