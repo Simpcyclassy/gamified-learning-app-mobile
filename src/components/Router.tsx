@@ -1,36 +1,16 @@
-// import React from 'react';
-// import {NavigationContainer} from '@react-navigation/native';
-// import {createStackNavigator} from '@react-navigation/stack';
-// import {Home} from '../../home/components';
-// import {Questions} from '../../questions/components';
-
-// const Stack = createStackNavigator();
-
-// const Router = () => {
-//   return (
-//     <NavigationContainer>
-//       <Stack.Navigator initialRouteName="Home">
-//         <Stack.Screen name="Home" component={Home} />
-//         <Stack.Screen name="Questions" component={Questions} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-//   );
-// };
-
-// export default Router;
-
 import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-// Screens
-import {Home} from './home/components';
-import {Questions} from './questions/components';
+import Home from './home/components';
+import Category from './category/components';
+// import Results from './results/components';
+import Questions from './questions/components';
 
 const Stack = createStackNavigator();
 
-const MainNavigation = () => (
+const Router = () => (
   <NavigationContainer>
     <Stack.Navigator
       screenOptions={{
@@ -44,12 +24,20 @@ const MainNavigation = () => (
         name="HomeScreen"
         component={Home}
         options={{
-          title: 'Scan Devices',
+          title: 'Home',
         }}
       />
-      <Stack.Screen name="HeartRate" component={Questions} />
+      <Stack.Screen
+        name="Category"
+        component={Category}
+        options={{
+          title: 'Primary Quiz',
+        }}
+      />
+      <Stack.Screen name="QuizPage" component={Questions} />
+      {/* <Stack.Screen name="ViewResult" component={Results} /> */}
     </Stack.Navigator>
   </NavigationContainer>
 );
 
-export default MainNavigation;
+export default Router;

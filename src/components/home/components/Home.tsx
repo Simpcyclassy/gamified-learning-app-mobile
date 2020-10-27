@@ -1,17 +1,45 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Button, StyleSheet, Image} from 'react-native';
 
-const Home = ({}) => {
+const Home = ({navigation}) => {
   return (
-    <View>
-      <Text>Welcome Chioma</Text>
-      <Text>Welcome Chioma</Text>
-      <Text>Welcome Chioma</Text>
-      <Text>Welcome Chioma</Text>
-      <Text>Welcome Chioma</Text>
-      <Text>Welcome Chioma</Text>
+    <View style={styles.container}>
+      <View style={styles.wrapper}>
+        <Text style={styles.welcome}>Welcome to quiz today</Text>
+        <Image
+          source={require('../../../images/quiz-images-png-6.png')}
+          style={styles.quizImage}
+        />
+        <Button
+          title="go to quiz"
+          onPress={() => navigation.navigate('Category')}
+        />
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+    backgroundColor: '#F5FCFF',
+  },
+  wrapper: {
+    width: '100%',
+    maxWidth: 425,
+  },
+  welcome: {
+    fontSize: 50,
+    textAlign: 'center',
+    margin: 10,
+  },
+  quizImage: {
+    width: 425,
+    height: 400,
+  },
+});
 
 export default Home;
